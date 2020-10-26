@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- 
+		DRY står for Don't Repeat Yourself 
+		Koden (JS) nedenfor har den svakheten at den har mye repetisjon når det kommer til utskrift. Hver funksjon har omtrent samme kode. Hvis vi skulle ønske å endre på HTML som skrives ut må vi gå i alle funksjonene og endre.
+	-->
+</head>
+<body>
+	
+	<input id="show-cat-btn" type="button" value="Vis Katt">
+	<input id="show-koala-btn" type="button" value="Vis Koala">
+	<input id="show-pelican-btn" type="button" value="Vis Pelican">
+	<input id="show-wizard-btn" type="button" value="Vis Wizard">
+	
+	<section id="output-section"></section>
+	
+	<script>
+		/*
+			HTML OBJECTS
+		*/
+		var showCatBtn = document.getElementById("show-cat-btn");
+		var showKoalaBtn = document.getElementById("show-koala-btn");
+		var showPelicanBtn = document.getElementById("show-pelican-btn");
+		var showWizardBtn = document.getElementById("show-wizard-btn");
+		
+		var outputSection = document.getElementById("output-section");
+				
+		/*
+			FUNCTIONS
+		*/
+		function showCat(){
+			outputSection.innerHTML = `
+				<article>
+					<h3>The Cat</h3>
+					<img src="images/cat.jpg">
+					<p>Kan mjaue.</p>
+				</article>
+			`;
+		}
+		
+		function showKoala(){
+			outputSection.innerHTML = `
+				<article>
+					<h3>Koala Beast</h3>
+					<img src="images/koala.jpg">
+					<p>Har styrken til 10 koalar</p>
+				</article>
+			`;
+		}
+		
+		function showPelican(){
+			outputSection.innerHTML = `
+				<article>
+					<h3>Pelican</h3>
+					<img src="images/pelican.jpg">
+					<p>Spydmester. Kan kaste spydet 500 meter.</p>
+				</article>
+			`;
+		}
+		
+		function showWizard(){
+			outputSection.innerHTML = `
+				<article>
+					<h3>Black Wizard</h3>
+					<img src="images/wizard.jpg">
+					<p>Kan kalle på zombies.</p>
+				</article>
+			`;
+		}
+		
+		/*
+			EVENTS
+		*/
+		showCatBtn.onclick = showCat;
+		showKoalaBtn.onclick = showKoala;
+		showPelicanBtn.onclick = showPelican;
+		showWizardBtn.onclick = showWizard;
+		
+	</script>
+	
+</body>
+</html>

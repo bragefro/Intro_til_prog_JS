@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Superdyr-array</title>
+	<!-- 
+		Lage et array med superhelt-objekter og bruke for-løkke for å skrive ut til siden 
+	-->
+</head>
+<body>
+	
+	<div>
+		
+		<header>
+			<h1>Superdyr</h1>
+		</header>
+		
+		<main id="output-main"></main>
+		
+	</div>
+	
+	<script>
+		
+		var outputMain = document.getElementById("output-main");
+
+		var characterArray = [ 
+			{
+				name: "The Panda",
+				image: "panda-panda.png"
+			},
+			{
+				name: "Dancing Rabbit",
+				image: "dancing-rabbit.png",
+			},
+			{
+				name: "Dollar Store The Thing",
+				image: "something.png"
+			}
+		 ];
+
+		function showCharacters(){
+			for (var i = 0; i < characterArray.length; i++){
+				outputMain.innerHTML += `
+					<article>
+						<h3>${ characterArray[i].name}</h3>
+						<img src="images/${characterArray[i].image}">
+					</article>
+				`;
+			}
+
+		}
+
+		showCharacters();
+	</script>
+	
+</body>
+</html>

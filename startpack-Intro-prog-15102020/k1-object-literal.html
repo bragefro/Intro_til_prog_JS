@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Superhelter og superskurker</title>
+	<style type="text/css">
+		.good{
+			color: blue;
+			border-left: 10px solid blue;
+		}
+		.evil{
+			color: red;
+			border-left: 10px solid red;
+		}
+	</style>
+	<!-- 
+		Opprette enkle objekter av en superhelt/superskurk og skrive ut til output-main.
+		Bruker 1 funksjon med parameter som tar imot superhelt/superskurk.
+		Sjekker om vedkommende er god eller ikke og knytter mot CSS-klasse i <style>.
+	-->
+</head>
+<body>
+	
+	<div>
+		
+		<header>
+			<h1>Superhelter og superskurker</h1>
+		</header>
+		
+		<main id="output-main"></main>
+		
+	</div>
+	
+	<script>
+
+		var outputMain = document.getElementById("output-main");
+
+		/* object (object literal, malen: {property: value, property: value2}) 
+		property = fakta om noe, som navn/pris/beskrivelse 
+		value = selve beskrivelsen, eks pris 100 */
+		var character1 = {
+			name: "Amazing Woman",
+			age: 28,
+			good: true,
+			image: "amazing-woman.png"
+		};
+
+		var character2 = {
+			name: "Vampire Man",
+			age: 800,
+			good: false,
+			image: "vampire-man.png"
+		}
+
+		function showCharacter ( character ){
+
+			var className = "";
+
+			if ( character.good === true ) {
+				className = "good";
+			}else{
+				className = "evil";
+			}
+
+			outputMain.innerHTML += `
+				<article>
+					<h3 class = "${ className }">${ character.name }</h3>
+					<p>Age: ${ character.age }</p>
+					<img src = "images/${ character.image }">
+				</article>
+			`;
+		}
+
+		showCharacter( character1 );
+		showCharacter( character2 );
+	</script>
+	
+</body>
+</html>

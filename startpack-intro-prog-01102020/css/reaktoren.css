@@ -1,0 +1,17 @@
+#status-silo1-h2, #status-silo2-h2{
+	color: red;
+}
+
+#silo1, #silo2{
+	height: 50px;
+	width: 500px;
+	background-color: rgb(255, 50, 50);
+	border: 3px solid rgb(10, 10, 10);
+	overflow: hidden;
+}
+
+#water-silo1-div, #water-silo2-div{
+	height: 50px;
+	width: 10px;
+	background-color: rgb(0, 0, 200);
+}

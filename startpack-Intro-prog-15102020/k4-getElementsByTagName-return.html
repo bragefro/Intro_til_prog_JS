@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>De tusen sirkler</title>
+	<style>
+		body{ background-color: rgb(30, 30, 30); } 
+		label{ color: white; } 
+		#output-div div{ width: 25px; height: 25px; border: 1px solid rgb(150, 150, 150); border-radius: 50%; }
+	</style>
+	<!--
+		Skriver ut x antall sirkler til nettsiden.
+		Funksjoner:
+		- funksjon som legger til sirkler.		
+		- funksjon som plasserer sirklene på tilfeldige plasser.		
+		- funksjon som endrer farge på alle sirklene. 
+
+		Splitte opp i flere funksjoner?
+	-->
+</head>
+<body>
+	
+	<div>		
+		<header></header>		
+		<main>
+			<label>Antall sirkler</label>
+			<select id="quantity-select">
+				<option>-Velg antall-</option>
+				<option>50</option>
+				<option>200</option>
+				<option>500</option>
+				<option>1000</option>
+			</select>
+			
+			<input id="generate-circles-btn" type="button" value="Legg til sirkler">						
+			<input id="change-position-btn" type="button" value="Endre posisjon">
+			<input id="change-color-btn" type="button" value="Endre farge">
+		</main>
+		
+		<div id="output-div"></div>
+	</div>
+	
+	<script>
+
+		var quantitySelect = document.getElementById("quantity-select");
+		var generateCirclesBtn = document.getElementById("generate-circles-btn");
+		var outputDiv = document.getElementById("output-div");
+
+		var changePositionBtn = document.getElementById("change-position-btn");
+
+		function changePosition(){
+			var divArray = outputDiv.getElementsByTagName("div");
+
+			for ( var i = 0; i < divArray.length; i++){
+				divArray[i].style.left = Math.floor( Math.random() * 1000 ) + "px";
+				divArray[i].style.top = Math.floor( Math.random() * 700 ) + "px";
+				divArray[i].style.position = "absolute";
+			}
+		}
+
+		function generateCircles(){
+			var quantity = quantitySelect.value;
+
+			for ( var i = 0; i < quantity; i++){
+				outputDiv.innerHTML += "<div></div>";
+			}
+		}
+
+		generateCirclesBtn.onclick = generateCircles;
+		changePositionBtn.onclick = changePosition;
+	</script>
+	
+</body>
+</html>

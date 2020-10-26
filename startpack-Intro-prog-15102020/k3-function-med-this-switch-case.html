@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Superdyrinfo</title>
+	<!-- 
+		Klikkbare bilder som leder til en funksjon med "this". Bruker switch case for å håndtere valget. 
+	-->
+</head>
+<body>
+	
+	<div>
+		
+		<header>
+			<h1>Superdyrinfo</h1>
+		</header>
+		
+		<main>
+			<img id="rabbit-img" src="images/dancing-rabbit.png">
+			<img id="panda-img" src="images/panda-panda.png">
+			<img id="dog-img" src="images/super-dog.png">
+			
+			<div id="output-div"></div>
+		</main>
+		
+	</div>
+	
+	<script>
+		var outputDiv = document.getElementById("output-div");
+
+		var rabbitImg = document.getElementById("rabbit-img");
+		var pandaImg = document.getElementById("panda-img");
+		var dogImg = document.getElementById("dog-img");
+
+
+		function showInfo(){
+
+			var message = "";
+
+			switch( this.id ){
+				case "rabbit-img":
+					message = "This is Dancing Rabbit!";
+					break;
+				case "panda-img":
+					message = "This is Kung Fu Panda!"
+					break;
+				case "dog-img":
+					message = "This is Superdog, he's a good boy!"
+			}
+			
+			outputDiv.innerHTML = message;
+		
+		}
+		
+		rabbitImg.onclick = showInfo;
+		pandaImg.onclick = showInfo;
+		dogImg.onclick = showInfo;
+
+
+	</script>
+	
+</body>
+</html>
